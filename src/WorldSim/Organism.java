@@ -5,6 +5,11 @@ import java.io.Serializable;
 
 public class Organism implements Serializable{
 
+    public Organism(Position pos, World world){
+        setPos(pos);
+        setWorld(world);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -23,6 +28,10 @@ public class Organism implements Serializable{
 
     public void setPos(Position pos) {
         this.pos = pos;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
     }
 
     public String getName() {
@@ -67,7 +76,7 @@ public class Organism implements Serializable{
         }
         attacker.kill();
         return;
-    }//TODO
+    }
 
     public void drawOrg(){
 
