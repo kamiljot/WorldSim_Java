@@ -9,20 +9,20 @@ public class Animal extends Organism {
     @Override
     protected void multiply(){
         Position newPos = world.freeRandomAround(pos, 1);
-        if (newPos.isEqual(this.location)){
+        if (newPos.isOccupied(this.pos)){
             return;
         }
-        world.addorganism(newPos, this.getName());
+        world.addOrganism(newPos, this.getName());
     }
 
     @Override
     public void action(){
         movePermission = true;
-        move(world.randomAround(pos, 1))
+        move(world.randomAround(pos, 1));
     }
 
     protected void move(Position newPos){
-        if (newPos.isEqual(pos)){
+        if (newPos.isOccupied(pos)){
             return;
         }
         if (!world.inBoundaries(newPos)){
