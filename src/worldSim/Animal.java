@@ -1,4 +1,4 @@
-package WorldSim;
+package worldSim;
 
 public class Animal extends Organism {
 

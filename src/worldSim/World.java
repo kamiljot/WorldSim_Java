@@ -1,12 +1,11 @@
-package WorldSim;
+package worldSim;
 
-import java.awt.*;
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
-import GUI.Frame;
+import gui.Frame;
 
-public class World implements Serializable {
+public class World /*implements Serializable */{
 
     protected Position size;
     protected ArrayList<ArrayList<Organism>> organisms;
@@ -27,45 +26,37 @@ public class World implements Serializable {
         }
         Organism newOrganism;
         switch (name){
-            case "Antelope":
-                newOrganism = new Antelope(pos, this);
+            case "Cheetah":
+                newOrganism = new Cheetah(pos, this);
                 break;
 
-            /*case "Fox":
-                newOrganism = new Fox(pos, this);
-                break;*/
+            case "Hedgehog":
+                newOrganism = new Hedgehog(pos, this);
+                break;
 
             case "Sheep":
                 newOrganism = new Sheep(pos, this);
                 break;
 
-            /*case "Turtle":
+            case "Turtle":
                 newOrganism = new Turtle(pos, this);
-                break;*/
+                break;
 
             case "Wolf":
                 newOrganism = new Wolf(pos, this);
                 break;
 
-            /*case "Human":
-                newOrganism = new Human(pos, this);
-                break;*/
+            case "DeadlyNightshade":
+                newOrganism = new DeadlyNightshade(pos, this);
+                break;
 
             case "Grass":
                 newOrganism = new Grass(pos, this);
                 break;
 
-            /*case "Sow Thistle":
-                newOrganism = new SowThistle(pos, this);
-                break;*/
-
             case "Guarana":
                 newOrganism = new Guarana(pos, this);
                 break;
-
-            /*case "Belladonna":
-                newOrganism = new Belladonna(pos, this);
-                break;*/
 
             default:
                 return null;
@@ -86,10 +77,7 @@ public class World implements Serializable {
     }
 
     public boolean inBoundaries(Position pos){
-        if (pos.x >= 0 && pos.x <= size.x && pos.y >= 0 && pos.y <= size.y) {
-            return true;
-        }
-        return false;
+        return pos.x >= 0 && pos.x <= size.x && pos.y >= 0 && pos.y <= size.y;
     }
 
     public Organism findObject(Position pos){
@@ -126,13 +114,13 @@ public class World implements Serializable {
         return newPos;
     }
 
-    public void newTurn(){
+ /*   public void newTurn(){
 
     }//TODO
 
     public void drawMap(){
 
-    }//TODO
+    }//TODO*/
 
 
 

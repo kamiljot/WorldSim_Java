@@ -1,11 +1,13 @@
-package WorldSim;
+package worldSim;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 
 public class Organism implements Serializable{
 
     public Organism(Position pos, World world){
+        this.setAge(0);
         setPos(pos);
         setWorld(world);
     }
@@ -56,10 +58,10 @@ public class Organism implements Serializable{
 
     public void action(){
 
-    }//TODO
+    }
 
     public void collision(Organism attacker, Organism defender){
-        if (attacker.getName() == defender.getName()){
+        if (Objects.equals(attacker.getName(), defender.getName())){
             this.multiply();
             attacker.movePermission = false;
             return;
@@ -75,16 +77,12 @@ public class Organism implements Serializable{
             return;
         }
         attacker.kill();
-        return;
     }
 
-    public void drawOrg(){
-
-    }//TODO
 
     protected void multiply(){
 
-    }//TODO
+    }
 
     public boolean specialCollision(Organism other){
         return true;
@@ -99,8 +97,8 @@ public class Organism implements Serializable{
     }
 
 
-    boolean killed=false;
-    protected boolean movePermission=true;
+    boolean killed = false;
+    protected boolean movePermission = true;
     protected String name;
     protected int age;
     protected int initiative;

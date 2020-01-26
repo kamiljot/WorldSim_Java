@@ -1,4 +1,4 @@
-package WorldSim;
+package worldSim;
 import java.io.Serializable;
 
 public class Position implements Serializable{
@@ -15,10 +15,7 @@ public class Position implements Serializable{
     }
 
     public boolean isOccupied(Position field){
-        if (this.x == field.x && this.y == field.y){
-            return true;
-        }
-        return false;
+        return this.x == field.x && this.y == field.y;
     }
 
 }

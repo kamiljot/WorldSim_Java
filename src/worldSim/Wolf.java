@@ -1,4 +1,4 @@
-package WorldSim;
+package worldSim;
 
 public class Wolf extends Animal {
     public Wolf(Position pos, World world){
